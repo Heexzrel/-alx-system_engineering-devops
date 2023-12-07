@@ -4,12 +4,12 @@ include stdlib
 
 file_line { 'Refuse to authenticate using a password':
   ensure => present,
-  path   => '/etc/ssh/ssh_config',
+  path   => 'alx-system_engineering-devops/0x0B-ssh/2-ssh_config',
   line   => 'PasswordAuthentication no',
 }
 
 file_line { 'Use private key':
   ensure => present,
-  path   => '/etc/ssh/ssh_config',
-  line   => 'IdentityFile ~/.ssh/school'
+  path   => 'alx-system_engineering-devops/0x0B-ssh/2-ssh_config',
+  line   => 'IdentityFile alx-system_engineering-devops/0x0B-ssh/2-ssh_config'
 }
