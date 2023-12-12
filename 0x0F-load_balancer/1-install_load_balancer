@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2016
-# installing and config load balancer
+# installing and configuration of Haproxy 
 apt-get -y install software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.0
 apt-get -y update
@@ -15,7 +15,11 @@ frontend load_balancer
     default_backend webserver
 backend webserver
     balance roundrobin
+<<<<<<< HEAD
     server 46964-web-01 54.157.174.213:80 check
-    server 46964-web-02 35.153.194.184:80 check
+=======
+    server 46964-web-01	54.157.174.213:80 check
+>>>>>>> 1cfb36e52d3160c72d2aea3ca700d994f5f28a77
+    server 46964-web-02 35.153.194.185:80 check
 " >> /etc/haproxy/haproxy.cfg
 service haproxy restart
