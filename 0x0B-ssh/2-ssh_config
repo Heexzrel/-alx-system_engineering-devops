@@ -2,7 +2,7 @@
 
 Host *
     PasswordAuthentication no
-    IdentityFile ~/.ssh/school
+    IdentityFile /alx-system_engineering-devops/0x0B-ssh/school
     SendEnv LANG LC_*
     HashKnownHosts yes
     GSSAPIAuthentication yes
