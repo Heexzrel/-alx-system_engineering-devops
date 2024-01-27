@@ -10,9 +10,19 @@ server {
     root   /var/www/html;
     index  index.html index.htm;
 
-    #serve /airbnb-onepage/ route on Airbnb_clone _v3
-    location = /airbnb-onepage/ {
+    # serve /airbnb-onepage/ route on Airbnb_clone _v3
+    location /airbnb-onepage/ {
         proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+    }
+
+    # serve /number_odd_or_even/ route on Airbnb_clone_v2
+    location /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+        proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
+    }
+
+    # serve Airbnb_clone_v3 API
+    location /api {
+        proxy_pass http://127.0.0.1:5002/api;
     }
 
     error_page 404 /404.html;
